@@ -3,17 +3,16 @@ Package `models` : classes des estimateurs de matrice de covariance.
  
 Exporte directement les éléments de base.py et tools.py.
 """
- 
-from .base import CorrelationEstimator, NotFittedError
-from tools.tools import FloatArray, sample_correlation_matrix, center, normalise, frobenius_norm, frobenius_error
- 
+
+# from .base import CorrelationEstimator, NotFittedError
+# from tools.tools import FloatArray, sample_correlation_matrix, center, normalise, frobenius_norm, frobenius_error
 __all__ = [
     "CorrelationEstimator",
-    "NotFittedError",
     "FloatArray",
-    "sample_correlation_matrix",
+    "NotFittedError",
     "center",
-    "normalise",
-    "frobenius_norm",
     "frobenius_error",
+    "frobenius_norm",
+    "normalise",
+    "sample_correlation_matrix",
 ]

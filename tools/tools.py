@@ -22,8 +22,8 @@ frobenius_error(A, B)
 
 
 import numpy as np
-from numpy.typing import NDArray
 from joblib import Parallel, delayed
+from numpy.typing import NDArray
 
 # Alias de type : tableau numpy de flottants, de dimension quelconque
 FloatArray = NDArray[np.floating]
@@ -99,13 +99,14 @@ def normalise(X: FloatArray, *, assume_centered: bool = False) -> FloatArray:
     Returns:
         FloatArray: La matrice normalisée
     """
-    X_centered = center(X, assume_centered = assume_centered)
+    X_centered = center(X, assume_centered=assume_centered)
     scale: FloatArray
     if assume_centered:
         scale = np.sqrt(np.mean(X**2, axis=0))
     else:
         scale = np.std(X_centered, axis=0)
     return X_centered / scale
+
 
 def frobenius_scalar_product(A: FloatArray, B: FloatArray) -> float:
     """ produit scalaire de Frobenius normalisée entre deux matrices carrées A et B de taille (p, p) : 
@@ -173,6 +174,7 @@ def terme_k(xk, S, p) -> float:
     M = np.outer(xk, xk) - S
     return np.sum(M**2) / p
 
+
 def beta_linear_shrinkage_parralel(X:FloatArray, S:FloatArray, n:int, p:int, n_jobs:int = -2) -> float:
     """Fonction pour calculer beta_ls par parralelisatio joblib
 
@@ -195,7 +197,8 @@ def beta_linear_shrinkage_parralel(X:FloatArray, S:FloatArray, n:int, p:int, n_j
 
 # Fonction log_stable pour le calcul du logarithme
 
-def log_stable(x: float, a: float =np.sqrt(5), seuil: float=1e3) -> float:
+
+def log_stable(x: float, a: float = np.sqrt(5), seuil: float = 1e3) -> float:
     """_summary_
 
     Args:
