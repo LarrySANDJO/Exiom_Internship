@@ -3,10 +3,13 @@ Ce script contient la classe principale CorrelationEstimator pour tous les estim
 """
 
 # Importation des librairies necessaires
-from tools.tools import *
+from __future__ import annotations  # Pour pouvoir faire les -> Nom_de_la_Class
+
 from abc import ABC, abstractmethod
 from typing import Self
+
 from models.data import DataClass
+from tools.tools import *
 
 
 class NotFittedError(RuntimeError):

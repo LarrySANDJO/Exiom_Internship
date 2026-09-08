@@ -2,9 +2,10 @@
 Ce fichier contient la classe SampleCorrelationEstimator de l'estimateur empirique de matrice de correlation
 """
 
+from __future__ import annotations  # Pour pouvoir faire les -> Nom_de_la_Class
+
 from models.rotation_invariant import RotationInvariantEstimators
 from tools.tools import FloatArray
-
 
 
 class SampleCorrelationEstimator(RotationInvariantEstimators):

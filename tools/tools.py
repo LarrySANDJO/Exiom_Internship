@@ -25,6 +25,7 @@ import numpy as np
 from joblib import Parallel, delayed
 from numpy.typing import NDArray
 
+
 # Alias de type : tableau numpy de flottants, de dimension quelconque
 FloatArray = NDArray[np.floating]
 

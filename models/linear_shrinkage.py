@@ -2,8 +2,10 @@
 Ce fichier comporte la classe LinearShrinkageEstimator pour le shrinkage lineaire
 """
 
-from models.rotation_invariant import RotationInvariantEstimators
+from __future__ import annotations  # Pour pouvoir faire les -> Nom_de_la_Class
+
 from models.data import DataClass
+from models.rotation_invariant import RotationInvariantEstimators
 from tools.tools import *
 
 

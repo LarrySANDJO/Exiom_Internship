@@ -2,6 +2,8 @@
 Ce fichier comporte la classe NonLinearShrinkageEstimator pour le shrinkage non lineaire
 """
 
+from __future__ import annotations  # Pour pouvoir faire les -> Nom_de_la_Class
+
 from models.rotation_invariant import RotationInvariantEstimators
 from tools.tools import *
 

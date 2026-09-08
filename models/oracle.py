@@ -3,6 +3,8 @@ Ce script contient la classe de l'estimateur Oracle (meme vecteurs propres que
 le sample correlation mais valeurs propres de la vraie matrice)
 """
 
+from __future__ import annotations  # Pour pouvoir faire les -> Nom_de_la_Class
+
 from models.rotation_invariant import RotationInvariantEstimators
 from tools.tools import FloatArray, np
 

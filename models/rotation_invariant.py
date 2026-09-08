@@ -2,10 +2,13 @@
 Ce script contient la classe principale pour tous les estimateurs invariants par rotation
 """
 
-from models.base import CorrelationEstimator
-from tools.tools import FloatArray, normalise, np, sample_correlation_matrix
+from __future__ import annotations  # Pour pouvoir faire les -> Nom_de_la_Class
+
 from abc import abstractmethod
+
+from models.base import CorrelationEstimator
 from models.data import DataClass
+from tools.tools import *
 
 
 class RotationInvariantEstimators(CorrelationEstimator):

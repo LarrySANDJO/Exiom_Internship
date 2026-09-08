@@ -2,12 +2,16 @@
 Tout par de classe data où l'on calcule directement les inputs essentiels pour les estimateurs.
 NB : ls = linear shrinkage
 """
+from __future__ import annotations  # Pour pouvoir faire les -> Nom_de_la_Class
+
+import numpy as np
 
 from tools.tools import *
 
-class DataClass():
 
-    def __init__(self, *, assume_centered:bool = False):
+class DataClass:
+
+    def __init__(self, *, assume_centered: bool = False):
         self.assume_centered: bool = assume_centered
         self.eigvals_: FloatArray = None
         self.eigvecs_: FloatArray = None
@@ -20,9 +24,8 @@ class DataClass():
         # ... d
         self.d_linear_shrinkage: float = None
 
-
     @staticmethod
-    def _check_input(X:FloatArray) -> FloatArray:
+    def _check_input(X: FloatArray) -> FloatArray:
         """
         Vérifie que X est bien un ndarray 2D (n, p) avec n >= 2, sinon lève
         une erreur explicite plutôt.
@@ -44,7 +47,7 @@ class DataClass():
 
         return X
 
-    def _prepare(self, X:FloatArray) -> FloatArray:
+    def _prepare(self, X: FloatArray) -> FloatArray:
             """
             Méthode utilitaire à appeler en tout début de fit() par les
             sous-classes : vérifie X, enregistre n_ et p_, et retourne X vérifié.

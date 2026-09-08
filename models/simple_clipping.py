@@ -2,6 +2,8 @@
 Ce script contient la classe pour l'estimateur par la methode de clipping simple 
 """
 
+from __future__ import annotations  # Pour pouvoir faire les -> Nom_de_la_Class
+
 from models.rotation_invariant import RotationInvariantEstimators
 from tools.tools import np
 

@@ -1,3 +1,5 @@
+from __future__ import annotations  # Pour pouvoir faire les -> Nom_de_la_Class
+
 import numpy as np
 from scipy.optimize import minimize
 
