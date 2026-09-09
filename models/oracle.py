@@ -24,10 +24,10 @@ class OracleEstimator(RotationInvariantEstimators):
     """
 
     def __init__(self, True_Sigma, *, assume_centered: bool = False) -> None:
-        super().__init__(assume_centered)
+        super().__init__(assume_centered=assume_centered)
         self.True_Sigma = True_Sigma
 
-    def transform_eigenvalues(self) -> FloatArray:
+    def transform_eigenvalues(self, eigvals) -> FloatArray:
         """
         Ici, eigvals (de S) n'est pas utilisée : l'oracle ignore complètement
         le spectre empirique et retourne directement celui de True_Sigma
