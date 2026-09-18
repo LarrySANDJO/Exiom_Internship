@@ -3,9 +3,10 @@ Ce script permet de télécharger via yahoo finance des données d'un actfi de r
 Il est conçu pour le cas du S&P500
 """
 
+from datetime import datetime, timedelta
+
 import pandas as pd
 import yfinance as yf
-from datetime import datetime, timedelta
 
 ANNEES = 15 # On prend par défaut les quinze années précédentes
 INDEX = "SP500"

@@ -1,0 +1,13 @@
+# Environnement virtuel
+repo_env/
+.venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Checkpoints Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store

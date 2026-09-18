@@ -61,14 +61,15 @@ class DataClass:
             X = self._check_input(X)
             self.n_, self.p_ = X.shape
             return X
-         
+
 
     def fit(self, X:FloatArray) -> DataClass:
         X = self._prepare(X)
-        sample_matrix = sample_correlation_matrix(normalise(X, assume_centered = self.assume_centered))
+        X_normalise = normalise(X, assume_centered=self.assume_centered)
+        sample_matrix = sample_correlation_matrix(X_normalise)
         self.eigvals_, self.eigvecs_ = np.linalg.eigh(sample_matrix)
         # beta_ls
-        self.beta_linear_shrinkage = beta_linear_shrinkage_parralel(X, sample_matrix, self.n_, self.p_)
+        self.beta_linear_shrinkage = beta_linear_shrinkage_parralel(X_normalise, sample_matrix, self.n_, self.p_)
         self.m_linear_shrinkage = frobenius_scalar_product(sample_matrix, np.eye(self.p_))
         self.d_linear_shrinkage = frobenius_norm(sample_matrix - self.m_linear_shrinkage * np.eye(self.p_)) ** 2
         return self

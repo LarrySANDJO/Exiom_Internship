@@ -34,13 +34,10 @@ def mc_matrix_parallel_sim(X :FloatArray, q :int, n :int, p :int, True_Sigma :Fl
     data_object = DataClass()
     data_object.fit(X)
 
-    S = SampleCorrelationEstimator().fit(data_object).correlation_
-    # vals_vecs = diagmatrix(S)
-
     resultats = {}
 
     t0 = time.perf_counter()
-    M = S
+    M = SampleCorrelationEstimator().fit(data_object).correlation_
     resultats["Sample"] = (frobenius_error(M, True_Sigma), np.trace(M)/np.trace(True_Sigma), time.perf_counter()-t0)
 
     t0 = time.perf_counter()
